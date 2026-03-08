@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About — Vijaywargi Khabiya &amp; Saoji | CA Firm Nagpur Est. 2014</title>
+<meta name="description" content="Learn about VKS — a multi-disciplinary chartered accountancy firm established in Nagpur in 2014. 12 years, 7 cities, 80+ professionals."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.why-card{background:var(--white);border:1px solid var(--line2);border-radius:var(--rl);padding:2rem 1.75rem;transition:all var(--t);position:relative;overflow:hidden}
+.why-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform var(--t)}
+.why-card:hover{box-shadow:var(--sh-md);border-color:transparent;transform:translateY(-4px)}
+.why-card:hover::after{transform:scaleX(1)}
+.why-n{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(196,154,26,.15);line-height:1;margin-bottom:1rem}
+.why-icon{font-size:2rem;margin-bottom:.75rem}
+.why-h{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:.5rem}
+
+.city-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.city{padding:.32rem .95rem;border:1.5px solid var(--line);border-radius:40px;font-size:.78rem;font-weight:500;color:var(--ink3);transition:all var(--t)}
+.city:hover{border-color:var(--gold);color:var(--navy);background:var(--gold-lt)}
+.city.hq{border-color:var(--navy);color:var(--navy);font-weight:600}
+
+.split-section{display:grid;grid-template-columns:1fr 1fr;min-height:400px;margin:6rem 0;border-radius:var(--rl);overflow:hidden;box-shadow:var(--sh-lg)}
+.split-left{background:var(--navy);padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.split-left::before{content:'';position:absolute;top:-3rem;right:-3rem;width:220px;height:220px;border-radius:50%;background:rgba(196,154,26,.07)}
+.split-left::after{content:'';position:absolute;bottom:-2rem;left:-2rem;width:160px;height:160px;border-radius:50%;background:rgba(176,28,46,.08)}
+.split-right{background:var(--white);padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center}
+.split-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:300;font-style:italic;color:rgba(255,255,255,.85);line-height:1.55;position:relative;z-index:1}
+.split-quote::before{content:'❝';font-size:4rem;color:rgba(196,154,26,.25);position:absolute;top:-1.5rem;left:-1rem;font-style:normal;line-height:1}
+.split-cite{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(196,154,26,.7);margin-top:1.5rem;position:relative;z-index:1}
+
+.value-row{display:flex;align-items:flex-start;gap:1.25rem;padding:1.25rem 0;border-bottom:1px solid var(--line2)}
+.value-row:last-child{border:none}
+.value-icon{width:44px;height:44px;border-radius:var(--rs);background:var(--surf);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;border:1px solid var(--line)}
+.value-row h4{font-size:.88rem;font-weight:600;color:var(--navy);margin-bottom:.25rem}
+.value-row p{font-size:.82rem;color:var(--ink4);line-height:1.6}
+
+@media(max-width:900px){
+  .why-grid{grid-template-columns:1fr 1fr}
+  .split-section{grid-template-columns:1fr;min-height:auto}
+  .split-right{padding:3rem 2rem}
+  .split-left{padding:3rem 2rem}
+}
+@media(max-width:640px){
+  .why-grid{grid-template-columns:1fr}
+  .split-section{margin:3rem 0}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo.jpg" alt="CA India Logo" class="logo-img"/>
+      <div class="logo-text">
+        <span class="logo-firm">Vijaywargi Khabiya &amp; Saoji</span>
+        <span class="logo-tag">Chartered Accountants · Est. 2014</span>
+      </div>
+    </a>
+        <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="partners.html">Team</a></li>
+      <li><a href="publications.html">Insights</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="gallery.html" class="nav-gallery-link">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta-btn">Contact Us</a></li>
+    </ul>
+    <button class="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="industries.html">Industries</a><a href="partners.html">Team</a>
+  <a href="publications.html">Insights</a><a href="careers.html">Careers</a>
+  <a href="gallery.html">Gallery 🖼</a>
+  <a href="contact.html">Contact →</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="ph">
+  <div class="container ph-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>About</div>
+    <span class="eyebrow">About the Firm</span>
+    <h1>About <em>VKS</em></h1>
+    <p style="max-width:min(560px,100%);margin-top:.75rem">12 years of trust, expertise and professional excellence — headquartered in Nagpur, serving organisations across India.</p>
+  </div>
+</div>
+
+<!-- OUR STORY -->
+<section class="pad">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual rv-scale">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&auto=format&fit=crop&q=80" alt="VKS Team" class="about-img-main" loading="lazy"/>
+        <div class="about-img-badge"><span class="n">2014</span><span class="l">Year<br/>Founded</span></div>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow rv">Our Story</span>
+        <h2 class="rv rv-d1">A Multi-Disciplinary<br/><em style="color:var(--gold)">CA Firm Since 2014</em></h2>
+        <div class="rule rv rv-d2"></div>
+        <p class="rv rv-d2">VKS — Vijaywargi Khabiya &amp; Saoji is a multi-disciplinary chartered accountancy firm based in Nagpur. Established in 2014 by three founding partners with deep domain expertise, the Firm has built a notable presence in a short span of time and grown to provide single-window professional services to organisations not only in Nagpur but also in Mumbai, Delhi, Pune, Hyderabad, Indore and Raipur.</p>
+        <p class="rv rv-d2" style="margin-top:1rem">Our team of 80+ professionals comprises Chartered Accountants, Company Secretaries, Advocates, IBBI-registered Insolvency Professionals and domain specialists — working collaboratively to deliver integrated, value-driven solutions tailored to each client's unique business context.</p>
+        <div class="about-quote rv rv-d3">
+          <p>"Our approach is to combine our domain knowledge with the business goals of our clients. Given the ever-changing nature of law and policies, we are proactive and alert our clients of any update that may have an impact on their business."</p>
+          <cite>— The VKS Philosophy</cite>
+        </div>
+        <div class="rv rv-d3" style="margin-top:1.5rem">
+          <p style="font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:.75rem">Cities We Serve</p>
+          <div class="city-list">
+            <span class="city hq">Nagpur (HQ)</span>
+            <span class="city">Mumbai</span>
+            <span class="city">Delhi</span>
+            <span class="city">Pune</span>
+            <span class="city">Hyderabad</span>
+            <span class="city">Indore</span>
+            <span class="city">Raipur</span>
+          </div>
+        </div>
+        <div style="margin-top:2rem;display:flex;gap:.75rem;flex-wrap:wrap" class="rv rv-d4">
+          <a href="partners.html" class="btn btn-navy">Meet Our Partners <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="contact.html" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY SPLIT -->
+<section class="pad" style="background:var(--surf)">
+  <div class="container">
+    <div class="split-section rv">
+      <div class="split-left">
+        <p class="split-quote">"Our approach is to combine our domain knowledge with business goals of our clients. Given the ever-changing nature of law and policies, we are proactive in our deliverable and alert our clients of any update that may have an impact on their business. Our staff is diverse and talented in all aspects of advisory and compliance."</p>
+        <div class="split-cite">— VKS Partners · Firm Philosophy · Since 2014</div>
+      </div>
+      <div class="split-right">
+        <span class="eyebrow" style="color:var(--navy)">Our Values</span>
+        <h2 style="font-size:1.8rem;margin-bottom:1.5rem">What Sets <em style="color:var(--gold)">Us Apart</em></h2>
+        <div class="value-row">
+          <div class="value-icon">🔒</div>
+          <div><h4>Single Window</h4><p>All professional services — audit, tax, legal, advisory — under one roof, one relationship. No need to manage multiple firms.</p></div>
+        </div>
+        <div class="value-row">
+          <div class="value-icon">📡</div>
+          <div><h4>Proactive Advisory</h4><p>We don't wait for problems. We monitor regulatory changes and alert clients before issues arise — saving time, money and risk.</p></div>
+        </div>
+        <div class="value-row">
+          <div class="value-icon">🌐</div>
+          <div><h4>Pan-India Reach</h4><p>7 cities, one trusted firm. From Nagpur to Mumbai, Delhi, Pune, Hyderabad, Indore and Raipur — consistent service quality everywhere.</p></div>
+        </div>
+        <div class="value-row">
+          <div class="value-icon">🎯</div>
+          <div><h4>Domain Depth</h4><p>Each partner leads a focused practice area with 18+ years of specialisation — bringing genuine expertise, not generalist advice.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VKS -->
+<section class="pad" id="whyvks">
+  <div class="container">
+    <div class="rv tc">
+      <span class="eyebrow" style="justify-content:center">Why Choose VKS</span>
+      <h2>Six Reasons Clients <em style="color:var(--gold)">Stay With Us</em></h2>
+      <div class="rule c"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card rv rv-d1">
+        <div class="why-icon">🏆</div>
+        <div class="why-n">12</div>
+        <div class="why-h">12 Years of Excellence</div>
+        <p style="font-size:.84rem;color:var(--ink4)">Established in 2014, VKS has consistently delivered high-quality professional services across all practice areas for over a decade.</p>
+      </div>
+      <div class="why-card rv rv-d2">
+        <div class="why-icon">👥</div>
+        <div class="why-n">80+</div>
+        <div class="why-h">80+ Strong Team</div>
+        <p style="font-size:.84rem;color:var(--ink4)">A diverse, multi-disciplinary team of CAs, Advocates, CSs, IBBI-registered IPs and domain specialists — all under one roof.</p>
+      </div>
+      <div class="why-card rv rv-d3">
+        <div class="why-icon">🗺️</div>
+        <div class="why-n">7</div>
+        <div class="why-h">7 Cities Pan-India</div>
+        <p style="font-size:.84rem;color:var(--ink4)">Serving clients across Nagpur, Mumbai, Delhi, Pune, Hyderabad, Indore and Raipur — one consistent service standard everywhere.</p>
+      </div>
+      <div class="why-card rv rv-d1">
+        <div class="why-icon">⚡</div>
+        <div class="why-n">01</div>
+        <div class="why-h">Single Window Service</div>
+        <p style="font-size:.84rem;color:var(--ink4)">From audit to tax, legal to IBC, debt to incentives — all professional services available through one firm, one contact, zero coordination overhead.</p>
+      </div>
+      <div class="why-card rv rv-d2">
+        <div class="why-icon">🔔</div>
+        <div class="why-n">∞</div>
+        <div class="why-h">Proactive Alerts</div>
+        <p style="font-size:.84rem;color:var(--ink4)">We monitor regulatory changes, court rulings and policy updates — and proactively inform clients of anything that may affect their business.</p>
+      </div>
+      <div class="why-card rv rv-d3">
+        <div class="why-icon">🌏</div>
+        <div class="why-n">12+</div>
+        <div class="why-h">Industry Sectors</div>
+        <p style="font-size:.84rem;color:var(--ink4)">Deep sector exposure across IT, Manufacturing, Real Estate, Pharma, Infrastructure, Healthcare, Defence, Education and more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-cell rv"><div class="stat-n" data-count="12" data-suffix="+">12+</div><div class="stat-l">Years of Excellence</div></div>
+  <div class="stat-cell rv rv-d1"><div class="stat-n" data-count="7" data-suffix="">7</div><div class="stat-l">Cities Pan-India</div></div>
+  <div class="stat-cell rv rv-d2"><div class="stat-n" data-count="80" data-suffix="+">80+</div><div class="stat-l">Team Members</div></div>
+  <div class="stat-cell rv rv-d3"><div class="stat-n" data-count="12" data-suffix="+">12+</div><div class="stat-l">Industry Sectors</div></div>
+</div>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="container"><div class="cta-inner">
+    <div class="cta-copy rv"><h2>Learn More About <em>Our Partners</em></h2><p>Meet the founding partners behind VKS and their areas of expertise.</p></div>
+    <div class="cta-actions rv rv-d2">
+      <a href="partners.html" class="btn btn-gold">Meet the Team <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="contact.html" class="btn btn-ghost">Contact Us</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo" style="margin-bottom:1.1rem;display:inline-flex">
+          <img src="images/logo.jpg" alt="Logo" style="width:44px;height:44px;object-fit:contain;flex-shrink:0"/>
+          <div class="logo-text" style="margin-left:.65rem">
+            <span class="logo-firm" style="color:rgba(255,255,255,.75)">Vijaywargi Khabiya &amp; Saoji</span>
+            <span class="logo-tag" style="color:rgba(196,154,26,.7)">Chartered Accountants</span>
+          </div>
+        </a>
+        <p class="ft-desc">3rd Floor, MG House, Civil Lines, Nagpur – 440001. Multi-disciplinary CA firm since 2014. 80+ professionals. Pan-India presence.</p>
+        <div class="ft-partners">
+          <h6>Partner Direct Lines</h6>
+          <div class="ft-p-item"><span class="ft-p-name">CA Varun Vijaywargi</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+          <div class="ft-p-item"><span class="ft-p-name">CA Pavan Khabiya</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+          <div class="ft-p-item"><span class="ft-p-name">CA Ashish Saoji</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+        </div>
+      </div>
+      <div class="ft-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="partners.html">Leadership</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="ft-col"><h5>Services</h5><ul><li><a href="services.html#audit">Audit &amp; Assurance</a></li><li><a href="services.html#direct-tax">Direct Taxation</a></li><li><a href="services.html#indirect-tax">Indirect Tax &amp; GST</a></li><li><a href="services.html#legal">Legal Services</a></li><li><a href="services.html#insolvency">Insolvency &amp; IBC</a></li><li><a href="services.html#debt">Debt Syndication</a></li></ul></div>
+      <div class="ft-col"><h5>Contact</h5><div class="ft-contact">
+        <div class="ft-ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>3rd Floor, MG House, Civil Lines, Nagpur – 440001</span></div>
+        <div class="ft-ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16z"/></svg><span><a href="tel:07122522020">0712-2522020</a></span></div>
+        <div class="ft-ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span><a href="/cdn-cgi/l/email-protection#3851565e57785b594e534b165156"><span class="__cf_email__" data-cfemail="7b12151d143b181a0d1008551215">[email&#160;protected]</span></a></span></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Vijaywargi Khabiya &amp; Saoji. All rights reserved.</p><p>Chartered Accountants · Nagpur · Est. 2014</p></div>
+  </div>
+</footer>
+
+
+<!-- Scroll to Top -->
+<button class="stt" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<nav class="mob-nav">
+  <div class="mob-nav-inner">
+    <a href="index.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Home
+    </a>
+    <a href="services.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Services
+    </a>
+    <a href="partners.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Team
+    </a>
+    <a href="careers.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>Careers
+    </a>
+    <a href="contact.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.128.96.341 1.903.637 2.822a2 2 0 01-.45 2.109L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.92.296 1.86.51 2.82.637A2 2 0 0122 16.92z"/></svg>Contact
+    </a>
+  </div>
+</nav>
+<script src="main.js"></script>
+</body>
+</html>

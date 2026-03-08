@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Industries — Vijaywargi Khabiya &amp; Saoji | Sector Expertise</title>
+<meta name="description" content="VKS serves 12+ industry sectors including IT, Manufacturing, Real Estate, Pharma, Infrastructure, Healthcare, Defence, Education and more."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.ind-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
+.ind-card{background:var(--white);border:1px solid var(--line2);border-radius:var(--rl);padding:2rem 1.5rem;text-align:center;transition:all var(--t);position:relative;overflow:hidden;cursor:default}
+.ind-card::before{content:'';position:absolute;inset:0;background:var(--navy);opacity:0;transition:opacity var(--t)}
+.ind-card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);border-color:transparent}
+.ind-card:hover::before{opacity:1}
+.ind-card-icon{font-size:2.5rem;margin-bottom:1rem;position:relative;z-index:1;transition:transform var(--t)}
+.ind-card:hover .ind-card-icon{transform:scale(1.12)}
+.ind-card-name{font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:.4rem;position:relative;z-index:1;transition:color var(--t)}
+.ind-card:hover .ind-card-name{color:var(--white)}
+.ind-card-desc{font-size:.76rem;color:var(--ink4);line-height:1.55;position:relative;z-index:1;transition:color var(--t)}
+.ind-card:hover .ind-card-desc{color:rgba(255,255,255,.55)}
+
+.services-used{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.85rem;position:relative;z-index:1;justify-content:center}
+.su-tag{font-size:.6rem;font-weight:600;padding:.18rem .55rem;border-radius:40px;background:rgba(196,154,26,.1);color:var(--gold);transition:all var(--t)}
+.ind-card:hover .su-tag{background:rgba(196,154,26,.2);color:var(--gold2)}
+
+@media(max-width:1100px){.ind-cards{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.ind-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.ind-cards{grid-template-columns:1fr 1fr;gap:.85rem}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo.jpg" alt="CA India Logo" class="logo-img"/>
+      <div class="logo-text">
+        <span class="logo-firm">Vijaywargi Khabiya &amp; Saoji</span>
+        <span class="logo-tag">Chartered Accountants · Est. 2014</span>
+      </div>
+    </a>
+        <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="industries.html" class="active">Industries</a></li>
+      <li><a href="partners.html">Team</a></li>
+      <li><a href="publications.html">Insights</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="gallery.html" class="nav-gallery-link">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta-btn">Contact Us</a></li>
+    </ul>
+    <button class="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="industries.html">Industries</a><a href="partners.html">Team</a>
+  <a href="publications.html">Insights</a><a href="careers.html">Careers</a>
+  <a href="gallery.html">Gallery 🖼</a>
+  <a href="contact.html">Contact →</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="ph">
+  <div class="container ph-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Industries</div>
+    <span class="eyebrow">Sector Expertise</span>
+    <h1>Industries We <em>Serve</em></h1>
+    <p style="max-width:min(560px,100%);margin-top:.75rem">12+ years of cross-sector engagement — deep domain knowledge across India's most dynamic industries.</p>
+  </div>
+</div>
+
+<!-- INDUSTRY CARDS -->
+<section class="pad">
+  <div class="container">
+    <div class="rv tc">
+      <span class="eyebrow" style="justify-content:center">Sector Exposure</span>
+      <h2>12+ Industry <em style="color:var(--gold)">Sectors</em></h2>
+      <div class="rule c"></div>
+      <p style="max-width:min(520px,100%);margin:0 auto">VKS has extensive cross-sector experience — our professionals understand industry-specific regulatory nuances, not just general compliance requirements.</p>
+    </div>
+    <div class="ind-cards">
+
+      <div class="ind-card rv rv-d1">
+        <div class="ind-card-icon">💻</div>
+        <div class="ind-card-name">IT &amp; ITES</div>
+        <div class="ind-card-desc">Software companies, BPOs, KPOs, IT-enabled services and tech startups across India.</div>
+        <div class="services-used"><span class="su-tag">GST</span><span class="su-tag">Transfer Pricing</span><span class="su-tag">Audit</span></div>
+      </div>
+
+      <div class="ind-card rv rv-d2">
+        <div class="ind-card-icon">🏗️</div>
+        <div class="ind-card-name">Real Estate</div>
+        <div class="ind-card-desc">Developers, construction companies, REITs and housing finance entities.</div>
+        <div class="services-used"><span class="su-tag">GST</span><span class="su-tag">Audit</span><span class="su-tag">Debt</span></div>
+      </div>
+
+      <div class="ind-card rv rv-d3">
+        <div class="ind-card-icon">⚙️</div>
+        <div class="ind-card-name">Manufacturing</div>
+        <div class="ind-card-desc">Large manufacturers, MSMEs, auto ancillaries, engineering and capital goods companies.</div>
+        <div class="services-used"><span class="su-tag">PSI</span><span class="su-tag">GST</span><span class="su-tag">Audit</span></div>
+      </div>
+
+      <div class="ind-card rv rv-d1">
+        <div class="ind-card-icon">💊</div>
+        <div class="ind-card-name">Pharma</div>
+        <div class="ind-card-desc">Pharmaceutical manufacturers, API companies, formulation exporters and biotech firms.</div>
+        <div class="services-used"><span class="su-tag">Customs</span><span class="su-tag">DGFT</span><span class="su-tag">Audit</span></div>
+      </div>
+
+      <div class="ind-card rv rv-d2">
+        <div class="ind-card-icon">🎓</div>
+        <div class="ind-card-name">Education</div>
+        <div class="ind-card-desc">Universities, colleges, coaching institutes, ed-tech companies and trust-based institutions.</div>
+        <div class="services-used"><span class="su-tag">Tax</span><span class="su-tag">Audit</span><span class="su-tag">Advisory</span></div>
+      </div>
+
+      <div class="ind-card rv rv-d3">
+        <div class="ind-card-icon">🏛️</div>
+        <div class="ind-card-name">Infrastructure</div>
+        <div class="ind-card-desc">Roads, highways, power, water and urban infrastructure projects and concessionaires.</div>
+        <div class="services-used"><span class="su-tag">Debt</span><span class="su-tag">PSI</span><span class="su-tag">IBC</span></div>
+      </div>
+
+      <div class="ind-card rv rv-d1">
+        <div class="ind-card-icon">🚗</div>
+        <div class="ind-card-name">Automobile</div>
+        <div class="ind-card-desc">OEMs, auto component manufacturers, dealers and ancillary industry participants.</div>
+        <div class="services-used"><span class="su-tag">GST</span><span class="su-tag">PSI</span><span class="su-tag">Audit</span></div>
+      </div>
+
+      <div class="ind-card rv rv-d2">
+        <div class="ind-card-icon">✈️</div>
+        <div class="ind-card-name">Defence &amp; Aviation</div>
+        <div class="ind-card-desc">Defence contractors, aerospace manufacturers, aviation service providers and MRO companies.</div>
+        <div class="services-used"><span class="su-tag">Offsets</span><span class="su-tag">Compliance</span><span class="su-tag">GST</span></div>
+      </div>
+
+      <div class="ind-card rv rv-d3">
+        <div class="ind-card-icon">🏥</div>
+        <div class="ind-card-name">Healthcare</div>
+        <div class="ind-card-desc">Hospitals, diagnostic chains, healthcare technology and medical device companies.</div>
+        <div class="services-used"><span class="su-tag">GST</span><span class="su-tag">Audit</span><span class="su-tag">Debt</span></div>
+      </div>
+
+      <div class="ind-card rv rv-d1">
+        <div class="ind-card-icon">🌾</div>
+        <div class="ind-card-name">Agro-based</div>
+        <div class="ind-card-desc">Agro-processing units, food manufacturers, cold chain operators and commodity traders.</div>
+        <div class="services-used"><span class="su-tag">GST</span><span class="su-tag">PSI</span><span class="su-tag">Customs</span></div>
+      </div>
+
+      <div class="ind-card rv rv-d2">
+        <div class="ind-card-icon">🏭</div>
+        <div class="ind-card-name">SEZ &amp; EOU</div>
+        <div class="ind-card-desc">Special Economic Zone units, Export Oriented Units and their regulatory compliance requirements.</div>
+        <div class="services-used"><span class="su-tag">DGFT</span><span class="su-tag">Customs</span><span class="su-tag">GST</span></div>
+      </div>
+
+      <div class="ind-card rv rv-d3">
+        <div class="ind-card-icon">🏦</div>
+        <div class="ind-card-name">Banking &amp; NBFC</div>
+        <div class="ind-card-desc">Commercial banks, cooperative banks, NBFCs, microfinance institutions and payment companies.</div>
+        <div class="services-used"><span class="su-tag">Concurrent Audit</span><span class="su-tag">RBI</span><span class="su-tag">IBC</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY SECTOR EXPERTISE MATTERS -->
+<section class="pad" style="background:var(--surf)">
+  <div class="container">
+    <div class="ind-split-grid">
+      <div>
+        <span class="eyebrow rv">Our Approach</span>
+        <h2 class="rv rv-d1">Industry Knowledge <em style="color:var(--gold)">Matters</em></h2>
+        <div class="rule rv rv-d2"></div>
+        <p class="rv rv-d2">Generic compliance advice is not enough. Each industry has unique regulatory nuances, GST classification challenges, sector-specific incentives and bespoke audit requirements. VKS professionals bring genuine sector depth — not just textbook knowledge — to every engagement.</p>
+        <p class="rv rv-d2" style="margin-top:1rem">Our cross-sector experience also creates value: insights from one industry often reveal opportunities and risks in another — giving our clients a broader perspective on regulatory trends affecting their business.</p>
+        <div class="rv rv-d3" style="margin-top:2rem;display:flex;gap:.75rem;flex-wrap:wrap">
+          <a href="services.html" class="btn btn-navy">Our Services <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="contact.html" class="btn btn-outline">Talk to an Expert</a>
+        </div>
+      </div>
+      <div class="rv-scale">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=80" alt="Industry expertise" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--rl);box-shadow:var(--sh-lg)" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="container"><div class="cta-inner">
+    <div class="cta-copy rv"><h2>Is Your Industry <em>Listed?</em></h2><p>Even if your sector isn't listed above, chances are we've worked with it. Talk to us.</p></div>
+    <div class="cta-actions rv rv-d2">
+      <a href="contact.html" class="btn btn-gold">Contact Us <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="tel:07122522020" class="btn btn-ghost">📞 0712-2522020</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo" style="margin-bottom:1.1rem;display:inline-flex">
+          <img src="images/logo.jpg" alt="Logo" style="width:44px;height:44px;object-fit:contain;flex-shrink:0"/>
+          <div class="logo-text" style="margin-left:.65rem">
+            <span class="logo-firm" style="color:rgba(255,255,255,.75)">Vijaywargi Khabiya &amp; Saoji</span>
+            <span class="logo-tag" style="color:rgba(196,154,26,.7)">Chartered Accountants</span>
+          </div>
+        </a>
+        <p class="ft-desc">3rd Floor, MG House, Civil Lines, Nagpur – 440001. Multi-disciplinary CA firm since 2014. 80+ professionals. Pan-India presence.</p>
+        <div class="ft-partners">
+          <h6>Partner Direct Lines</h6>
+          <div class="ft-p-item"><span class="ft-p-name">CA Varun Vijaywargi</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+          <div class="ft-p-item"><span class="ft-p-name">CA Pavan Khabiya</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+          <div class="ft-p-item"><span class="ft-p-name">CA Ashish Saoji</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+        </div>
+      </div>
+      <div class="ft-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="partners.html">Leadership</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="ft-col"><h5>Sectors</h5><ul><li><a href="#">IT &amp; ITES</a></li><li><a href="#">Manufacturing</a></li><li><a href="#">Real Estate</a></li><li><a href="#">Pharma</a></li><li><a href="#">Healthcare</a></li><li><a href="#">Banking &amp; NBFC</a></li></ul></div>
+      <div class="ft-col"><h5>Contact</h5><div class="ft-contact">
+        <div class="ft-ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16z"/></svg><span><a href="tel:07122522020">0712-2522020</a></span></div>
+        <div class="ft-ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span><a href="/cdn-cgi/l/email-protection#b0d9ded6dff0d3d1c6dbc39ed9de"><span class="__cf_email__" data-cfemail="ee87808881ae8d8f98859dc08780">[email&#160;protected]</span></a></span></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Vijaywargi Khabiya &amp; Saoji. All rights reserved.</p><p>Chartered Accountants · Nagpur · Est. 2014</p></div>
+  </div>
+</footer>
+
+
+<!-- Scroll to Top -->
+<button class="stt" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<nav class="mob-nav">
+  <div class="mob-nav-inner">
+    <a href="index.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Home
+    </a>
+    <a href="services.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Services
+    </a>
+    <a href="partners.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Team
+    </a>
+    <a href="careers.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>Careers
+    </a>
+    <a href="contact.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.128.96.341 1.903.637 2.822a2 2 0 01-.45 2.109L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.92.296 1.86.51 2.82.637A2 2 0 0122 16.92z"/></svg>Contact
+    </a>
+  </div>
+</nav>
+<script src="main.js"></script>
+</body>
+</html>

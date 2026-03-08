@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Services — Vijaywargi Khabiya &amp; Saoji | Audit, Tax, Legal, IBC</title>
+<meta name="description" content="Nine practice areas — Audit, Direct Tax, Indirect Tax & GST, Legal, Debt Syndication, IBC, State Incentives, Ind AS and Listing Compliances. VKS, Nagpur."/>
+<meta property="og:title" content="Services — VKS Chartered Accountants"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+/* Services page extras */
+.svc-page-wrap{padding:80px 0}
+.svc-layout{display:grid;grid-template-columns:230px 1fr;gap:5rem;align-items:start;position:relative}
+.svc-sidebar{position:sticky;top:calc(var(--nav-h) + 2rem)}
+.svc-sidebar-title{font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink4);margin-bottom:.75rem;padding-left:.85rem}
+.svc-nav{display:flex;flex-direction:column;gap:.2rem}
+.svc-nav a{font-size:.78rem;font-weight:500;color:var(--ink3);padding:.58rem .85rem;border-radius:var(--rs);border-left:2px solid transparent;transition:all .2s var(--ease);display:flex;align-items:center;gap:.6rem;white-space:nowrap}
+.svc-nav a svg{width:14px;height:14px;flex-shrink:0;opacity:.5;transition:opacity .2s}
+.svc-nav a:hover,.svc-nav a.active{color:var(--navy);background:rgba(13,27,62,.05);border-left-color:var(--gold)}
+.svc-nav a:hover svg,.svc-nav a.active svg{opacity:1}
+.svc-nav a.active{font-weight:600}
+
+.svc-section{padding:4rem 0;border-bottom:1px solid var(--line2)}
+.svc-section:last-child{border:none;padding-bottom:0}
+.svc-section-inner{display:grid;grid-template-columns:1fr 360px;gap:3.5rem;align-items:start}
+.svc-section-inner.flip{grid-template-columns:360px 1fr}
+.svc-section-inner.flip .svc-img-col{order:1}
+.svc-section-inner.flip .svc-text{order:2}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;color:var(--line);line-height:1;margin-bottom:1.25rem}
+.svc-icon-box{width:50px;height:50px;border:1.5px solid var(--line);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:1.25rem;transition:all var(--t)}
+.svc-section:hover .svc-icon-box{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.svc-list{display:flex;flex-direction:column;gap:.55rem;margin:1.4rem 0 2rem}
+.svc-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.87rem;color:var(--ink3);line-height:1.6}
+.svc-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.5rem}
+.svc-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:var(--sh-lg)}
+.svc-img-caption{margin-top:.85rem;background:var(--surf);border-left:2px solid var(--gold);padding:.65rem 1rem;border-radius:0 var(--rs) var(--rs) 0}
+.svc-img-caption p{font-size:.78rem;color:var(--ink4);margin:0;line-height:1.5}
+
+@media(max-width:1100px){
+  .svc-layout{grid-template-columns:minmax(0,190px) 1fr;gap:3rem}
+  .svc-section-inner{grid-template-columns:1fr}
+  .svc-section-inner.flip .svc-img-col,.svc-section-inner.flip .svc-text{order:unset}
+  .svc-img-col{display:none}
+}
+@media(max-width:900px){
+  .svc-layout{grid-template-columns:1fr}
+  .svc-sidebar{display:none}
+}
+@media(max-width:640px){
+  .svc-page-wrap{padding:48px 0}
+  .svc-section{padding:3rem 0}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo.jpg" alt="CA India Logo" class="logo-img"/>
+      <div class="logo-text">
+        <span class="logo-firm">Vijaywargi Khabiya &amp; Saoji</span>
+        <span class="logo-tag">Chartered Accountants · Est. 2014</span>
+      </div>
+    </a>
+        <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="partners.html">Team</a></li>
+      <li><a href="publications.html">Insights</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="gallery.html" class="nav-gallery-link">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta-btn">Contact Us</a></li>
+    </ul>
+    <button class="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="industries.html">Industries</a><a href="partners.html">Team</a>
+  <a href="publications.html">Insights</a><a href="careers.html">Careers</a>
+  <a href="gallery.html">Gallery 🖼</a>
+  <a href="contact.html">Contact →</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="ph">
+  <div class="container ph-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Services</div>
+    <span class="eyebrow">What We Do</span>
+    <h1>Our <em>Services</em></h1>
+    <p style="max-width:min(560px,100%);margin-top:.75rem">Nine practice areas — each delivered with domain depth, regulatory intelligence and a commitment to your business goals.</p>
+  </div>
+</div>
+
+<!-- SERVICES CONTENT -->
+<div class="svc-page-wrap">
+  <div class="container">
+    <div class="svc-layout">
+
+      <!-- STICKY LEFT SIDEBAR -->
+      <aside class="svc-sidebar">
+        <div class="svc-sidebar-title">Practice Areas</div>
+        <nav class="svc-nav">
+          <a href="#audit" class="active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            Audit &amp; Assurance
+          </a>
+          <a href="#direct-tax">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Direct Taxation
+          </a>
+          <a href="#indirect-tax">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+            Indirect Tax &amp; GST
+          </a>
+          <a href="#legal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            Legal Services
+          </a>
+          <a href="#insolvency">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            Insolvency &amp; IBC
+          </a>
+          <a href="#debt">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6m0 8v6M4.93 4.93l4.24 4.24m5.66 5.66l4.24 4.24M2 12h6m8 0h6"/></svg>
+            Debt Syndication
+          </a>
+          <a href="#incentives">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+            State Incentives
+          </a>
+          <a href="#indas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+            Ind AS &amp; Due Diligence
+          </a>
+          <a href="#listing">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Listing Compliances
+          </a>
+        </nav>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <div class="svc-content">
+
+        <!-- 01 AUDIT -->
+        <div class="svc-section" id="audit">
+          <div class="svc-section-inner">
+            <div class="svc-text">
+              <div class="svc-num rv">01</div>
+              <div class="svc-icon-box rv rv-d1">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+              </div>
+                            <h2 class="rv rv-d2">Audit &amp; <em style="color:var(--gold)">Assurance</em></h2>
+              <div class="rule rv rv-d2"></div>
+              <p class="rv rv-d3">VKS conducts rigorous compliance reviews and helps quantify and measure financial impact. Our audit teams bring a structured, risk-based approach — ensuring accuracy, transparency and regulatory adherence across every engagement. We serve listed companies, banks, NBFCs, PSUs and MSMEs.</p>
+              <ul class="svc-list rv rv-d3">
+                <li>Statutory Audit under Companies Act, 2013</li>
+                <li>Tax Audit under Section 44AB of the Income Tax Act</li>
+                <li>Internal Audit &amp; Management Audit</li>
+                <li>GST Audit and Reconciliation (GSTR-9C)</li>
+                <li>Concurrent Audit for Banks &amp; NBFCs</li>
+                <li>Stock &amp; Receivables Audit</li>
+                <li>Due Diligence Reviews for M&amp;A transactions</li>
+                <li>System Audit &amp; IT Audit</li>
+              </ul>
+              <a href="contact.html" class="btn btn-navy rv rv-d4">Enquire Now <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="svc-img-col rv-scale">
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=720&auto=format&fit=crop&q=80" alt="Audit" class="svc-img" loading="lazy"/>
+              <div class="svc-img-caption"><p>Rigorous compliance reviews that protect your organisation and give stakeholders confidence.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 DIRECT TAX -->
+        <div class="svc-section" id="direct-tax">
+          <div class="svc-section-inner flip">
+            <div class="svc-img-col rv-scale">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=720&auto=format&fit=crop&q=80" alt="Direct Taxation" class="svc-img" loading="lazy"/>
+              <div class="svc-img-caption"><p>Tax-efficient structures that minimise liabilities while ensuring full regulatory compliance.</p></div>
+            </div>
+            <div class="svc-text">
+              <div class="svc-num rv">02</div>
+              <div class="svc-icon-box rv rv-d1">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M7 8h10M7 12h4"/></svg>
+              </div>
+              <span class="eyebrow rv rv-d1">Taxation</span>
+              <h2 class="rv rv-d2">Direct <em style="color:var(--gold)">Taxation</em></h2>
+              <div class="rule rv rv-d2"></div>
+              <p class="rv rv-d3">Executing sound business strategies to minimise tax liabilities is essential. Our direct tax team stays current with every regulatory evolution to deliver compliant, optimised strategies for individuals, HUFs, partnerships and corporations across India.</p>
+              <ul class="svc-list rv rv-d3">
+                <li>Corporate Tax Planning &amp; Advisory</li>
+                <li>Tax Return Preparation &amp; Filing</li>
+                <li>Assessment, Reassessment &amp; Appeals</li>
+                <li>Representation before CIT(A), DRP &amp; ITAT</li>
+                <li>Transfer Pricing Study &amp; Documentation</li>
+                <li>TDS Compliance &amp; Advisory</li>
+                <li>International Taxation &amp; DTAA</li>
+                <li>Tax Due Diligence for M&amp;A</li>
+              </ul>
+              <a href="contact.html" class="btn btn-navy rv rv-d4">Enquire Now <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 INDIRECT TAX -->
+        <div class="svc-section" id="indirect-tax">
+          <div class="svc-section-inner">
+            <div class="svc-text">
+              <div class="svc-num rv">03</div>
+              <div class="svc-icon-box rv rv-d1">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+              </div>
+              <span class="eyebrow rv rv-d1">Taxation</span>
+              <h2 class="rv rv-d2">Indirect Tax <em style="color:var(--gold)">&amp; GST</em></h2>
+              <div class="rule rv rv-d2"></div>
+              <p class="rv rv-d3">VKS offers comprehensive indirect tax services under GST, Customs, Service Tax and allied laws. Led by CA Varun Vijaywargi with 18+ years of specialisation, our team has guided hundreds of businesses through GST implementation, refund claims and complex litigation across all forums.</p>
+              <ul class="svc-list rv rv-d3">
+                <li>GST Advisory, Structuring &amp; Compliance</li>
+                <li>GST Return Filing (GSTR-1, 3B, 9, 9C)</li>
+                <li>GST Refund Claims — Export &amp; Inverted Duty</li>
+                <li>GST Audit &amp; Health Check</li>
+                <li>Representation before GST Authorities &amp; Tribunal</li>
+                <li>Customs &amp; DGFT Advisory</li>
+                <li>SEZ / EOU Compliance</li>
+                <li>Legacy Service Tax Matters</li>
+                <li>Customs Duty — Classification, Valuation &amp; Compliance</li>
+                <li>Import / Export Licensing &amp; DGFT Procedures</li>
+                <li>Anti-Dumping &amp; Safeguard Duty Advisory</li>
+              </ul>
+              <a href="contact.html" class="btn btn-navy rv rv-d4">Enquire Now <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="svc-img-col rv-scale">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=720&auto=format&fit=crop&q=80" alt="GST" class="svc-img" loading="lazy"/>
+              <div class="svc-img-caption"><p>Comprehensive GST advisory from implementation to litigation — one of our strongest practice areas.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 LEGAL -->
+        <div class="svc-section" id="legal">
+          <div class="svc-section-inner flip">
+            <div class="svc-img-col rv-scale">
+              <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=720&auto=format&fit=crop&q=80" alt="Legal Services" class="svc-img" loading="lazy"/>
+              <div class="svc-img-caption"><p>Strong representation before High Courts, ITAT, NCLT and GST Tribunals.</p></div>
+            </div>
+            <div class="svc-text">
+              <div class="svc-num rv">04</div>
+              <div class="svc-icon-box rv rv-d1">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/><path d="M8 6V4m8 2V4M8 18v2m8-2v2"/></svg>
+              </div>
+              <span class="eyebrow rv rv-d1">Legal</span>
+              <h2 class="rv rv-d2">Legal <em style="color:var(--gold)">Services</em></h2>
+              <div class="rule rv rv-d2"></div>
+              <p class="rv rv-d3">VKS offers strong legal services in direct and indirect tax litigation. Our team of CAs and Advocates has a proven record of representing clients before High Courts, ITAT, NCLT, GST Appellate Authorities and other judicial forums across India.</p>
+              <ul class="svc-list rv rv-d3">
+                <li>Direct Tax Litigation — CIT(A), ITAT &amp; High Court</li>
+                <li>Indirect Tax Litigation — GST Tribunal, High Court</li>
+                <li>NCLT Representation in IBC Matters</li>
+                <li>Show Cause Notice Replies &amp; Adjudications</li>
+                <li>Writ Petitions in Tax Matters</li>
+                <li>Settlement Commission Matters</li>
+                <li>Advance Ruling Applications</li>
+                <li>Corporate Law Advisory under Companies Act</li>
+              </ul>
+              <a href="contact.html" class="btn btn-navy rv rv-d4">Enquire Now <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 INSOLVENCY -->
+        <div class="svc-section" id="insolvency">
+          <div class="svc-section-inner">
+            <div class="svc-text">
+              <div class="svc-num rv">05</div>
+              <div class="svc-icon-box rv rv-d1">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              </div>
+              <span class="eyebrow rv rv-d1">Insolvency</span>
+              <h2 class="rv rv-d2">Insolvency &amp; <em style="color:var(--gold)">IBC</em></h2>
+              <div class="rule rv rv-d2"></div>
+              <p class="rv rv-d3">Led by CA Ashish Saoji — an experienced IBC practitioner with 18+ years — our insolvency practice covers the full spectrum of proceedings under the Insolvency and Bankruptcy Code, 2016. We have handled landmark CIRP matters before NCLT benches across India.</p>
+              <ul class="svc-list rv rv-d3">
+                <li>Corporate Insolvency Resolution Process (CIRP)</li>
+                <li>Liquidation Proceedings</li>
+                <li>NCLT Filings &amp; Representation</li>
+                <li>Financial Creditor &amp; Operational Creditor Advisory</li>
+                <li>Resolution Applicant Advisory</li>
+                <li>Pre-Pack Insolvency (PPIRP)</li>
+                <li>Personal Insolvency (IBA)</li>
+                <li>IRP / RP / Liquidator Support Services</li>
+              </ul>
+              <a href="contact.html" class="btn btn-navy rv rv-d4">Enquire Now <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="svc-img-col rv-scale">
+              <img src="https://images.unsplash.com/photo-1453945619913-79ec89a82c51?w=720&auto=format&fit=crop&q=80" alt="IBC Insolvency" class="svc-img" loading="lazy"/>
+              <div class="svc-img-caption"><p>Landmark CIRP proceedings and creditor advisory handled with precision and legal rigour.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 DEBT SYNDICATION -->
+        <div class="svc-section" id="debt">
+          <div class="svc-section-inner flip">
+            <div class="svc-img-col rv-scale">
+              <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=720&auto=format&fit=crop&q=80" alt="Debt Syndication" class="svc-img" loading="lazy"/>
+              <div class="svc-img-caption"><p>Structured debt advisory and credit rating support to secure optimal financing for your projects.</p></div>
+            </div>
+            <div class="svc-text">
+              <div class="svc-num rv">06</div>
+              <div class="svc-icon-box rv rv-d1">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6m0 8v6M4.93 4.93l4.24 4.24m5.66 5.66l4.24 4.24M2 12h6m8 0h6M4.93 19.07l4.24-4.24m5.66-5.66l4.24-4.24"/></svg>
+              </div>
+              <span class="eyebrow rv rv-d1">Finance</span>
+              <h2 class="rv rv-d2">Debt <em style="color:var(--gold)">Syndication</em></h2>
+              <div class="rule rv rv-d2"></div>
+              <p class="rv rv-d3">Dynamic business environments require organisations to optimise their capital structure. VKS provides comprehensive debt syndication, project finance and credit rating advisory — liaising directly with banks, financial institutions and NBFCs to secure the best funding solutions for your projects.</p>
+              <ul class="svc-list rv rv-d3">
+                <li>Project Finance &amp; Term Loan Syndication</li>
+                <li>Working Capital Finance Advisory</li>
+                <li>Credit Rating Advisory (CRISIL, ICRA, CARE)</li>
+                <li>Bank Loan Proposals &amp; CMA Preparation</li>
+                <li>Structured Finance Solutions</li>
+                <li>NBFC &amp; Alternative Finance Sourcing</li>
+                <li>Debt Restructuring &amp; OTS Advisory</li>
+                <li>Export Finance (ECGC, Exim Bank)</li>
+              </ul>
+              <a href="contact.html" class="btn btn-navy rv rv-d4">Enquire Now <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 07 STATE INCENTIVES -->
+        <div class="svc-section" id="incentives">
+          <div class="svc-section-inner">
+            <div class="svc-text">
+              <div class="svc-num rv">07</div>
+              <div class="svc-icon-box rv rv-d1">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+              </div>
+              <span class="eyebrow rv rv-d1">Incentives</span>
+              <h2 class="rv rv-d2">State Incentives <em style="color:var(--gold)">&amp; PSI</em></h2>
+              <div class="rule rv rv-d2"></div>
+              <p class="rv rv-d3">VKS has deep expertise in state-level incentive schemes and is a leading advisor for the Package Scheme of Incentives (PSI) in Maharashtra and the Incentive Scheme of Telangana. We also advise domestic and foreign enterprises on setting-up businesses in India — from entity structuring and FEMA/RBI compliance to full regulatory onboarding.</p>
+              <ul class="svc-list rv rv-d3">
+                <li>Package Scheme of Incentives (PSI), Maharashtra</li>
+                <li>Scheme of Telangana — Investment Advisory</li>
+                <li>Setting-Up Businesses in India — End-to-End</li>
+                <li>FEMA &amp; RBI Compliance for Foreign Investors</li>
+                <li>Entity Structuring (LLP, Company, Branch, Liaison)</li>
+                <li>Industrial Promotion Subsidy Claims</li>
+                <li>Power Tariff Concession Applications</li>
+                <li>Employment Generation Incentive Claims</li>
+              </ul>
+              <a href="contact.html" class="btn btn-navy rv rv-d4">Enquire Now <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="svc-img-col rv-scale">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=720&auto=format&fit=crop&q=80" alt="State Incentives" class="svc-img" loading="lazy"/>
+              <div class="svc-img-caption"><p>Maximise state-level benefits — PSI Maharashtra, Telangana incentives and setting-up in India advisory.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 08 IND AS -->
+        <div class="svc-section" id="indas">
+          <div class="svc-section-inner flip">
+            <div class="svc-img-col rv-scale">
+              <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=720&auto=format&fit=crop&q=80" alt="Ind AS" class="svc-img" loading="lazy"/>
+              <div class="svc-img-caption"><p>Seamless Ind AS transition, business valuation and financial due diligence for M&amp;A transactions.</p></div>
+            </div>
+            <div class="svc-text">
+              <div class="svc-num rv">08</div>
+              <div class="svc-icon-box rv rv-d1">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+              </div>
+              <span class="eyebrow rv rv-d1">Accounting</span>
+              <h2 class="rv rv-d2">Ind AS &amp; <em style="color:var(--gold)">Due Diligence</em></h2>
+              <div class="rule rv rv-d2"></div>
+              <p class="rv rv-d3">As Indian companies align with global accounting standards, VKS provides comprehensive Ind AS transition support, financial due diligence and business valuation services. Our team ensures smooth adoption with minimal disruption to your financial reporting and internal processes.</p>
+              <ul class="svc-list rv rv-d3">
+                <li>Ind AS Impact Assessment &amp; Readiness Review</li>
+                <li>Transition to Ind AS (Opening Balance Sheet)</li>
+                <li>Ongoing Ind AS Compliance &amp; Advisory</li>
+                <li>Financial Due Diligence for M&amp;A, PE &amp; FDI</li>
+                <li>Business Valuation (DCF, NAV, EV methods)</li>
+                <li>Purchase Price Allocation (PPA)</li>
+                <li>Goodwill Impairment Reviews</li>
+                <li>ESOP Valuation under Ind AS 102</li>
+              </ul>
+              <a href="contact.html" class="btn btn-navy rv rv-d4">Enquire Now <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 09 LISTING -->
+        <div class="svc-section" id="listing">
+          <div class="svc-section-inner">
+            <div class="svc-text">
+              <div class="svc-num rv">09</div>
+              <div class="svc-icon-box rv rv-d1">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <span class="eyebrow rv rv-d1">Compliance</span>
+              <h2 class="rv rv-d2">Listing <em style="color:var(--gold)">Compliances</em></h2>
+              <div class="rule rv rv-d2"></div>
+              <p class="rv rv-d3">Listed companies face a complex and ever-evolving regulatory landscape. VKS provides end-to-end compliance support for listed and pre-IPO companies under SEBI regulations, Stock Exchange guidelines and the Companies Act — ensuring you stay ahead of every filing deadline and regulatory requirement.</p>
+              <ul class="svc-list rv rv-d3">
+                <li>SEBI (LODR) Compliance — Quarterly &amp; Annual</li>
+                <li>Board Meeting &amp; AGM Compliance Support</li>
+                <li>Related Party Transaction Compliance</li>
+                <li>Insider Trading Policy &amp; UPSI Management</li>
+                <li>Secretarial Audit under Companies Act, 2013</li>
+                <li>SEBI Inspection Preparation</li>
+                <li>Pre-IPO Compliance Readiness</li>
+                <li>Delisting &amp; Open Offer Advisory</li>
+              </ul>
+              <a href="contact.html" class="btn btn-navy rv rv-d4">Enquire Now <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="svc-img-col rv-scale">
+              <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=720&auto=format&fit=crop&q=80" alt="Listing Compliance" class="svc-img" loading="lazy"/>
+              <div class="svc-img-caption"><p>Full SEBI LODR compliance support so listed companies can focus on business, not paperwork.</p></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /svc-content -->
+    </div><!-- /svc-layout -->
+  </div><!-- /container -->
+</div>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="container"><div class="cta-inner">
+    <div class="cta-copy rv"><h2>Not Sure Which Service <em>You Need?</em></h2><p>Talk to our team — we'll identify the right practice area and the right partner for your requirement.</p></div>
+    <div class="cta-actions rv rv-d2">
+      <a href="contact.html" class="btn btn-gold">Talk to Us <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="tel:07122522020" class="btn btn-ghost">📞 0712-2522020</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo" style="margin-bottom:1.1rem;display:inline-flex">
+          <img src="images/logo.jpg" alt="Logo" style="width:44px;height:44px;object-fit:contain;flex-shrink:0"/>
+          <div class="logo-text" style="margin-left:.65rem">
+            <span class="logo-firm" style="color:rgba(255,255,255,.75)">Vijaywargi Khabiya &amp; Saoji</span>
+            <span class="logo-tag" style="color:rgba(196,154,26,.7)">Chartered Accountants</span>
+          </div>
+        </a>
+        <p class="ft-desc">3rd Floor, MG House, Civil Lines, Nagpur – 440001. Multi-disciplinary CA firm since 2014. 80+ professionals. Pan-India presence.</p>
+        <div class="ft-partners">
+          <h6>Partner Direct Lines</h6>
+          <div class="ft-p-item"><span class="ft-p-name">CA Varun Vijaywargi</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+          <div class="ft-p-item"><span class="ft-p-name">CA Pavan Khabiya</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+          <div class="ft-p-item"><span class="ft-p-name">CA Ashish Saoji</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+        </div>
+      </div>
+      <div class="ft-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="partners.html">Leadership</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="ft-col"><h5>Services</h5><ul><li><a href="#audit">Audit &amp; Assurance</a></li><li><a href="#direct-tax">Direct Taxation</a></li><li><a href="#indirect-tax">Indirect Tax &amp; GST</a></li><li><a href="#legal">Legal Services</a></li><li><a href="#insolvency">Insolvency &amp; IBC</a></li><li><a href="#debt">Debt Syndication</a></li><li><a href="#incentives">State Incentives</a></li><li><a href="#indas">Ind AS &amp; Due Diligence</a></li></ul></div>
+      <div class="ft-col"><h5>Contact</h5><div class="ft-contact">
+        <div class="ft-ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>3rd Floor, MG House, Civil Lines, Nagpur – 440001</span></div>
+        <div class="ft-ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16z"/></svg><span><a href="tel:07122522020">0712-2522020</a></span></div>
+        <div class="ft-ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span><a href="/cdn-cgi/l/email-protection#70191e161f301311061b035e191e"><span class="__cf_email__" data-cfemail="f0999e969fb09391869b83de999e">[email&#160;protected]</span></a></span></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Vijaywargi Khabiya &amp; Saoji. All rights reserved.</p><p>Chartered Accountants · Nagpur · Est. 2014</p></div>
+  </div>
+</footer>
+
+
+<!-- Scroll to Top -->
+<button class="stt" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<nav class="mob-nav">
+  <div class="mob-nav-inner">
+    <a href="index.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Home
+    </a>
+    <a href="services.html" class="mob-nav-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Services
+    </a>
+    <a href="partners.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Team
+    </a>
+    <a href="careers.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>Careers
+    </a>
+    <a href="contact.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.128.96.341 1.903.637 2.822a2 2 0 01-.45 2.109L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.92.296 1.86.51 2.82.637A2 2 0 0122 16.92z"/></svg>Contact
+    </a>
+  </div>
+</nav>
+<script src="main.js"></script>
+</body>
+</html>

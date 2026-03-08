@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Insights &amp; Publications — Vijaywargi Khabiya &amp; Saoji</title>
+<meta name="description" content="Tax alerts, regulatory updates and thought leadership from the VKS partners — covering GST, Direct Tax, IBC, Corporate Law and more."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+/* ── Filter Tabs ── */
+.pub-filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:2.5rem 0 2rem}
+.pf-btn{padding:.5rem 1.1rem;border-radius:40px;font-size:.75rem;font-weight:600;letter-spacing:.05em;border:1.5px solid var(--line);color:var(--ink3);background:var(--white);cursor:pointer;transition:all .22s var(--ease)}
+.pf-btn:hover{border-color:var(--navy);color:var(--navy)}
+.pf-btn.active{background:var(--navy);border-color:var(--navy);color:var(--white)}
+
+/* ── Publication grid ── */
+.pub-grid-full{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.pub-card-full{background:var(--white);border:1px solid var(--line2);border-radius:var(--rl);overflow:hidden;transition:all var(--t);position:relative;display:flex;flex-direction:column}
+.pub-card-full:hover{box-shadow:var(--sh-lg);transform:translateY(-5px);border-color:transparent}
+.pub-card-full::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--red));transform:scaleX(0);transform-origin:left;transition:transform var(--t)}
+.pub-card-full:hover::after{transform:scaleX(1)}
+.pub-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.pub-body{padding:1.75rem;display:flex;flex-direction:column;flex:1}
+.pub-tag-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.pub-tag-pill{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .7rem;border-radius:40px}
+.pt-gst{background:rgba(13,27,62,.08);color:var(--navy)}
+.pt-direct{background:rgba(176,28,46,.08);color:var(--red)}
+.pt-ibc{background:rgba(196,154,26,.12);color:var(--gold)}
+.pt-corporate{background:rgba(34,100,34,.08);color:#226422}
+.pt-general{background:var(--surf);color:var(--ink3)}
+.pub-date{font-size:.68rem;font-weight:500;color:var(--ink4)}
+.pub-title-full{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--ink);line-height:1.3;margin-bottom:.7rem}
+.pub-excerpt-full{font-size:.83rem;color:var(--ink4);line-height:1.75;flex:1;margin-bottom:1.25rem}
+.pub-read{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:600;color:var(--navy);transition:gap var(--tf)}
+.pub-card-full:hover .pub-read{gap:.65rem;color:var(--gold)}
+.pub-read svg{width:14px;height:14px;transition:transform var(--tf)}
+.pub-card-full:hover .pub-read svg{transform:translateX(3px)}
+
+/* Featured large pub */
+.pub-featured{display:grid;grid-template-columns:1.2fr 1fr;gap:0;background:var(--white);border:1px solid var(--line2);border-radius:var(--rl);overflow:hidden;box-shadow:var(--sh-md);margin-bottom:3rem;transition:all var(--t)}
+.pub-featured:hover{box-shadow:var(--sh-lg);border-color:transparent}
+.pub-feat-img{width:100%;height:100%;min-height:320px;object-fit:cover;display:block}
+.pub-feat-body{padding:2.5rem 2.25rem;display:flex;flex-direction:column;justify-content:center}
+.pub-feat-eyebrow{font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.pub-feat-eyebrow::before{content:'';width:16px;height:1px;background:var(--gold)}
+.pub-feat-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:1rem}
+.pub-feat-excerpt{font-size:.88rem;color:var(--ink3);line-height:1.82;margin-bottom:1.5rem}
+
+/* Hidden cards (filtered out) */
+.pub-card-full.hidden{display:none}
+
+/* No results */
+.pub-empty{display:none;text-align:center;padding:4rem 2rem;color:var(--ink4);font-size:.9rem;grid-column:1/-1}
+.pub-empty.show{display:block}
+
+@media(max-width:1000px){
+  .pub-featured{grid-template-columns:1fr}
+  .pub-feat-img{min-height:240px;height:240px}
+}
+@media(max-width:900px){.pub-grid-full{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){
+  .pub-grid-full{grid-template-columns:1fr}
+  .pub-filters{gap:.35rem}
+  .pf-btn{font-size:.7rem;padding:.42rem .85rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo.jpg" alt="CA India Logo" class="logo-img"/>
+      <div class="logo-text">
+        <span class="logo-firm">Vijaywargi Khabiya &amp; Saoji</span>
+        <span class="logo-tag">Chartered Accountants · Est. 2014</span>
+      </div>
+    </a>
+        <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="partners.html">Team</a></li>
+      <li><a href="publications.html" class="active">Insights</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="gallery.html" class="nav-gallery-link">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta-btn">Contact Us</a></li>
+    </ul>
+    <button class="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="industries.html">Industries</a><a href="partners.html">Team</a>
+  <a href="publications.html">Insights</a><a href="careers.html">Careers</a>
+  <a href="gallery.html">Gallery 🖼</a>
+  <a href="contact.html">Contact →</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="ph">
+  <div class="container ph-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Insights</div>
+    <span class="eyebrow">Knowledge Hub</span>
+    <h1>Insights &amp; <em>Publications</em></h1>
+    <p style="max-width:min(560px,100%);margin-top:.75rem">Tax alerts, regulatory updates and thought leadership from the VKS partners — keeping you informed and ahead of change.</p>
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<section class="pad">
+  <div class="container">
+
+    <!-- FEATURED ARTICLE -->
+    <div class="pub-featured rv">
+      <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&auto=format&fit=crop&q=80" alt="GST GSTR-9" class="pub-feat-img" loading="lazy"/>
+      <div class="pub-feat-body">
+        <div class="pub-feat-eyebrow">Featured · GST · December 2020</div>
+        <h2 class="pub-feat-title">Key Changes in GSTR-9 &amp; GSTR-9C for FY 2019-20</h2>
+        <p class="pub-feat-excerpt">Significant amendments to the GST annual return forms (GSTR-9) and the reconciliation statement (GSTR-9C) were introduced for FY 2019-20. This article analyses the key changes, their practical impact on taxpayers and the key compliance steps businesses must follow before filing their annual returns.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+          <div style="display:flex;align-items:center;gap:.75rem">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:700;color:var(--gold)">VV</div>
+            <div>
+              <div style="font-size:.8rem;font-weight:600;color:var(--ink)">CA Varun Vijaywargi</div>
+              <div style="font-size:.68rem;color:var(--ink4)">12 min read</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-navy" style="font-size:.78rem;padding:.55rem 1.2rem">Read Full Article <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="pub-filters">
+      <button class="pf-btn active" data-filter="all">All Publications</button>
+      <button class="pf-btn" data-filter="gst">GST &amp; Indirect Tax</button>
+      <button class="pf-btn" data-filter="direct">Direct Tax</button>
+      <button class="pf-btn" data-filter="ibc">Insolvency &amp; IBC</button>
+      <button class="pf-btn" data-filter="corporate">Corporate Law</button>
+    </div>
+
+    <!-- PUBLICATION CARDS -->
+    <div class="pub-grid-full" id="pubGrid">
+
+      <!-- GST 1 -->
+      <div class="pub-card-full rv rv-d1" data-cat="gst">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&auto=format&fit=crop&q=75" alt="" class="pub-img" loading="lazy"/>
+        <div class="pub-body">
+          <div class="pub-tag-row">
+            <span class="pub-tag-pill pt-gst">GST</span>
+            <span class="pub-date">December 2020 · 8 min</span>
+          </div>
+          <h3 class="pub-title-full">GSTR-9 &amp; GSTR-9C: Key Changes for FY 2019-20</h3>
+          <p class="pub-excerpt-full">Significant amendments in GST annual return forms applicable from FY 2019-20 and their practical impact on taxpayers and CA practitioners.</p>
+          <a href="contact.html" class="pub-read">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Direct Tax 1 -->
+      <div class="pub-card-full rv rv-d2" data-cat="direct">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=75" alt="" class="pub-img" loading="lazy"/>
+        <div class="pub-body">
+          <div class="pub-tag-row">
+            <span class="pub-tag-pill pt-direct">Direct Tax</span>
+            <span class="pub-date">October 2019 · 6 min</span>
+          </div>
+          <h3 class="pub-title-full">Section 115BAA — New Concessional Corporate Tax Rate</h3>
+          <p class="pub-excerpt-full">Analysis of the 22% concessional corporate tax rate introduced by the Taxation Laws (Amendment) Ordinance, 2019 — impact on MAT, deductions and DDT.</p>
+          <a href="contact.html" class="pub-read">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- IBC 1 -->
+      <div class="pub-card-full rv rv-d3" data-cat="ibc">
+        <img src="https://images.unsplash.com/photo-1453945619913-79ec89a82c51?w=600&auto=format&fit=crop&q=75" alt="" class="pub-img" loading="lazy"/>
+        <div class="pub-body">
+          <div class="pub-tag-row">
+            <span class="pub-tag-pill pt-ibc">IBC</span>
+            <span class="pub-date">March 2018 · 10 min</span>
+          </div>
+          <h3 class="pub-title-full">Insolvency &amp; Bankruptcy Code — One Year of Resolution</h3>
+          <p class="pub-excerpt-full">Practical insights from the first year of IBC 2016 proceedings and key learnings for financial creditors, operational creditors and resolution applicants.</p>
+          <a href="contact.html" class="pub-read">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- GST 2 -->
+      <div class="pub-card-full rv rv-d1" data-cat="gst">
+        <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=600&auto=format&fit=crop&q=75" alt="" class="pub-img" loading="lazy"/>
+        <div class="pub-body">
+          <div class="pub-tag-row">
+            <span class="pub-tag-pill pt-gst">GST</span>
+            <span class="pub-date">July 2020 · 7 min</span>
+          </div>
+          <h3 class="pub-title-full">E-Invoicing under GST — Applicability &amp; Implementation Guide</h3>
+          <p class="pub-excerpt-full">A comprehensive guide on the mandatory e-invoicing system for businesses above the threshold turnover — how it works, who it applies to and implementation steps.</p>
+          <a href="contact.html" class="pub-read">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Direct Tax 2 -->
+      <div class="pub-card-full rv rv-d2" data-cat="direct">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=75" alt="" class="pub-img" loading="lazy"/>
+        <div class="pub-body">
+          <div class="pub-tag-row">
+            <span class="pub-tag-pill pt-direct">Direct Tax</span>
+            <span class="pub-date">February 2020 · 9 min</span>
+          </div>
+          <h3 class="pub-title-full">Budget 2020 — Key Direct Tax Proposals &amp; Their Impact</h3>
+          <p class="pub-excerpt-full">A practitioner's analysis of Union Budget 2020 direct tax proposals — new personal tax regime, dividend taxation changes and key corporate amendments.</p>
+          <a href="contact.html" class="pub-read">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- IBC 2 -->
+      <div class="pub-card-full rv rv-d3" data-cat="ibc">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop&q=75" alt="" class="pub-img" loading="lazy"/>
+        <div class="pub-body">
+          <div class="pub-tag-row">
+            <span class="pub-tag-pill pt-ibc">IBC</span>
+            <span class="pub-date">August 2020 · 8 min</span>
+          </div>
+          <h3 class="pub-title-full">COVID-19 &amp; IBC Amendments — Suspension of CIRP</h3>
+          <p class="pub-excerpt-full">Analysis of the suspension of IBC provisions during COVID-19 — implications for financial creditors, pending CIRPs and the way forward for stressed assets.</p>
+          <a href="contact.html" class="pub-read">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Corporate 1 -->
+      <div class="pub-card-full rv rv-d1" data-cat="corporate">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=75" alt="" class="pub-img" loading="lazy"/>
+        <div class="pub-body">
+          <div class="pub-tag-row">
+            <span class="pub-tag-pill pt-corporate">Corporate Law</span>
+            <span class="pub-date">January 2019 · 6 min</span>
+          </div>
+          <h3 class="pub-title-full">Companies Act Amendments 2018 — Key Changes for Businesses</h3>
+          <p class="pub-excerpt-full">Significant amendments to the Companies Act, 2013 including decriminalisation of offences, CSR changes and new provisions for listed companies.</p>
+          <a href="contact.html" class="pub-read">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- GST 3 -->
+      <div class="pub-card-full rv rv-d2" data-cat="gst">
+        <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=600&auto=format&fit=crop&q=75" alt="" class="pub-img" loading="lazy"/>
+        <div class="pub-body">
+          <div class="pub-tag-row">
+            <span class="pub-tag-pill pt-gst">GST</span>
+            <span class="pub-date">November 2019 · 5 min</span>
+          </div>
+          <h3 class="pub-title-full">GST Refund on Export of Goods — Common Errors &amp; Best Practices</h3>
+          <p class="pub-excerpt-full">A practical guide to claiming GST refunds on export of goods — common errors in GSTR-1 filings, ICEGATE mismatch issues and tips to ensure faster processing.</p>
+          <a href="contact.html" class="pub-read">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Direct Tax 3 -->
+      <div class="pub-card-full rv rv-d3" data-cat="direct">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop&q=75" alt="" class="pub-img" loading="lazy"/>
+        <div class="pub-body">
+          <div class="pub-tag-row">
+            <span class="pub-tag-pill pt-direct">Direct Tax</span>
+            <span class="pub-date">April 2018 · 7 min</span>
+          </div>
+          <h3 class="pub-title-full">Long Term Capital Gains Tax on Equity — Finance Act 2018</h3>
+          <p class="pub-excerpt-full">Re-introduction of 10% LTCG tax on equity investments — grandfathering provisions, computation of cost of acquisition and practical implications for investors.</p>
+          <a href="contact.html" class="pub-read">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div class="pub-empty" id="pubEmpty">No publications found in this category.</div>
+
+    </div>
+
+    <!-- Subscribe nudge -->
+    <div style="margin-top:3.5rem;background:var(--navy);border-radius:var(--rl);padding:2.5rem 2.25rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap" class="rv">
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--white);margin-bottom:.35rem">Want to Stay Updated?</h3>
+        <p style="font-size:.85rem;color:rgba(255,255,255,.5);margin:0">Reach out to us to receive tax alerts and regulatory updates directly from the VKS partners.</p>
+      </div>
+      <a href="contact.html" class="btn btn-gold">Subscribe to Alerts <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- KNOWLEDGE PORTAL -->
+<section class="pad" style="background:var(--surf)">
+  <div class="container">
+    <div class="rv">
+      <span class="eyebrow">Knowledge Portal</span>
+      <h2>Monthly <em style="color:var(--gold)">Bulletins</em></h2>
+      <div class="rule"></div>
+      <p style="max-width:min(520px,100%)">Monthly tax and regulatory bulletins published by the VKS team. Click to download or read each bulletin.</p>
+    </div>
+    <div class="kb-grid">
+      <div class="kb-card rv rv-d1">
+        <div class="kb-month">March 2026</div>
+        <div class="kb-title">VKS Monthly Bulletin — March 2026</div>
+        <div class="kb-desc">Key updates on GST, direct tax, IBC and regulatory changes for the month. Budget 2026 special coverage.</div>
+        <a href="#" class="kb-link">Download PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="kb-card rv rv-d2">
+        <div class="kb-month">February 2026</div>
+        <div class="kb-title">VKS Monthly Bulletin — February 2026</div>
+        <div class="kb-desc">Union Budget 2026-27 analysis — direct tax proposals, GST amendments and sector-specific impacts.</div>
+        <a href="#" class="kb-link">Download PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="kb-card rv rv-d3">
+        <div class="kb-month">January 2026</div>
+        <div class="kb-title">VKS Monthly Bulletin — January 2026</div>
+        <div class="kb-desc">Year-end compliance checklist, advance tax reminder, GST annual return filing guide for FY 2024-25.</div>
+        <a href="#" class="kb-link">Download PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="kb-add-note rv" style="margin-top:2rem">
+      📎 <strong>To add a new bulletin:</strong> Upload your PDF to the <code style="background:var(--line);padding:.1rem .4rem;border-radius:3px">images/</code> folder, copy one of the cards above and update the month, title, description and <code style="background:var(--line);padding:.1rem .4rem;border-radius:3px">href</code> link.
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="container"><div class="cta-inner">
+    <div class="cta-copy rv"><h2>Questions on Any <em>Tax Update?</em></h2><p>Our partners are available to clarify any regulatory development that may affect your business.</p></div>
+    <div class="cta-actions rv rv-d2">
+      <a href="contact.html" class="btn btn-gold">Ask the Experts <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="tel:07122522020" class="btn btn-ghost">📞 0712-2522020</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo" style="margin-bottom:1.1rem;display:inline-flex">
+          <img src="images/logo.jpg" alt="Logo" style="width:44px;height:44px;object-fit:contain;flex-shrink:0"/>
+          <div class="logo-text" style="margin-left:.65rem">
+            <span class="logo-firm" style="color:rgba(255,255,255,.75)">Vijaywargi Khabiya &amp; Saoji</span>
+            <span class="logo-tag" style="color:rgba(196,154,26,.7)">Chartered Accountants</span>
+          </div>
+        </a>
+        <p class="ft-desc">3rd Floor, MG House, Civil Lines, Nagpur – 440001. Multi-disciplinary CA firm since 2014. 80+ professionals. Pan-India presence.</p>
+        <div class="ft-partners">
+          <h6>Partner Direct Lines</h6>
+          <div class="ft-p-item"><span class="ft-p-name">CA Varun Vijaywargi</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+          <div class="ft-p-item"><span class="ft-p-name">CA Pavan Khabiya</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+          <div class="ft-p-item"><span class="ft-p-name">CA Ashish Saoji</span><a href="tel:+91XXXXXXXXXX" class="ft-p-num">+91 XXXXX XXXXX</a></div>
+        </div>
+      </div>
+      <div class="ft-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="partners.html">Leadership</a></li><li><a href="publications.html">Insights</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="ft-col"><h5>Topics</h5><ul><li><a href="#">GST &amp; Indirect Tax</a></li><li><a href="#">Direct Taxation</a></li><li><a href="#">Insolvency &amp; IBC</a></li><li><a href="#">Corporate Law</a></li></ul></div>
+      <div class="ft-col"><h5>Contact</h5><div class="ft-contact">
+        <div class="ft-ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16z"/></svg><span><a href="tel:07122522020">0712-2522020</a></span></div>
+        <div class="ft-ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span><a href="/cdn-cgi/l/email-protection#e58c8b838aa58684938e96cb8c8b"><span class="__cf_email__" data-cfemail="5b32353d341b383a2d3028753235">[email&#160;protected]</span></a></span></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Vijaywargi Khabiya &amp; Saoji. All rights reserved.</p><p>Chartered Accountants · Nagpur · Est. 2014</p></div>
+  </div>
+</footer>
+
+
+<!-- Scroll to Top -->
+<button class="stt" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<nav class="mob-nav">
+  <div class="mob-nav-inner">
+    <a href="index.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Home
+    </a>
+    <a href="services.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Services
+    </a>
+    <a href="partners.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Team
+    </a>
+    <a href="careers.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>Careers
+    </a>
+    <a href="contact.html" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.128.96.341 1.903.637 2.822a2 2 0 01-.45 2.109L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.92.296 1.86.51 2.82.637A2 2 0 0122 16.92z"/></svg>Contact
+    </a>
+  </div>
+</nav>
+<script src="main.js"></script>
+</body>
+</html>
